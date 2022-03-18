@@ -19,3 +19,63 @@ You do need to sign up for an account to use Github. It's an online place to sha
 git config --global user.name "name"
 ## Email
 git config --global user.email "email"
+
+# Terminal Command
+## Navigation
+ls
+  print home directories (shows the files)
+start .
+  show folders
+ls folderName/
+  print folders inside the location
+pwd
+  print ot your current location
+cd folderName
+  change location to the folder
+cd ..
+  take us back one level
+touch fileName
+  create file
+mkdir
+  make folder
+rm fileName
+  remove the file
+rm -rf folderName
+  remove the folder
+  '-rf' is a version of 'rm' that delete folders
+
+# Repositpry
+A Git "Repo" is a workspace which tracks and manages files within a folder.
+Anytime we want to use Git with a project, app, etc we need to create a new git repository. 
+We can have as many repos on our machine as needed, all with separate histories and contents.
+
+# Git command
+## Official website about command
+https://git-scm.com/docs
+
+## Basics
+git status
+  gives information on the current status of a git repository and its contents
+git init
+  Use git init to create a new git repository. 
+  Before we can do anything git-related, wemust initialize a repo first!
+
+## Adding
+git add file1 file2
+  stage all changes at once
+git add .
+   this stages all changes at once
+## Committing
+git commit -m "Type Messege"
+  We use the git commit command to actually commit changes from the staging area.
+
+##Log
+git log
+  shows the log of commit
+
+
+
+
+
+
+
