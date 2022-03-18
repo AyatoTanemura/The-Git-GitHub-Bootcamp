@@ -12,3 +12,10 @@ You don't need the internet to use it. You can use Git without ever touching Git
 ## GitHub
 Github is a service that hosts Git repositories in the cloud and makes it easier to collaborate with other people.
 You do need to sign up for an account to use Github. It's an online place to share work that is done using Git.
+
+
+# setup
+## Name
+git config --global user.name "name"
+## Email
+git config --global user.email "email"
