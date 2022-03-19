@@ -19,6 +19,8 @@ You do need to sign up for an account to use Github. It's an online place to sha
 git config --global user.name "name"
 ## Email
 git config --global user.email "email"
+## Default Editor (VScode)
+git config --global core.editor "code --wait"
 
 # Terminal Command
 ## Navigation
@@ -68,18 +70,23 @@ git add .
 ## Committing
 git commit -m "Type Messege"
   We use the git commit command to actually commit changes from the staging area.
+git commit
+  go VScode after commit and add comments
 
 ##Log
 git log
   shows the log of commit
-
+git log --oneline
+  only shows the first line of comments
 # Commit in detail
 ##Git docs
 https://git-scm.com/docs (same as above)
 
+##Atomic Commits
+try to keep each commit focused on a single thing.
 
-
-
+## writing comment
+either past tense or present, be in a pattern
 
 
 
