@@ -88,12 +88,17 @@ try to keep each commit focused on a single thing.
 ## writing comment
 either past tense or present, be in a pattern
 
+# Amending Commits
+git commit -m "some commit"
+git add forgotten_file
+git commit --amend
+  Suppose you just made a commit and then realized you forgot to include a file! Or, maybe you made a
+  typo in the commit message that you want to correct.
 
-
-
-
-
-
+# Ignoring File
+touch .gitignore
+  Create a file called .gitignore in the root of a repository. Inside the file, we can write patterns to
+  tell Git which files & folders to ignore
 
 
 
