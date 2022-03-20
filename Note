@@ -72,6 +72,8 @@ git commit -m "Type Messege"
   We use the git commit command to actually commit changes from the staging area.
 git commit
   go VScode after commit and add comments
+git commit -a -m "message"
+  this does add and commit at the same time
 
 ##Log
 git log
@@ -99,6 +101,56 @@ git commit --amend
 touch .gitignore
   Create a file called .gitignore in the root of a repository. Inside the file, we can write patterns to
   tell Git which files & folders to ignore
+
+# Git Branching 
+git branch
+  viewing branches
+git branch new-branch-name
+  Creating branches
+  Use git branch <branch-name> to make a new branch based upon the current HEAD
+git switch branch-name
+  Switching Branches
+git switch -c new-branch-name
+  Use git switch with the -c flag to create a new branch AND switch to it all in one go. 
+git checkout branch-name
+  The checkout command does a million additional things, so the decision was made to add a 
+  standalone switch command which is much simpler.
+  
+# Deleting & Remaing branches
+git branch -d branch-name
+  deleting the branch you specify
+  you have to be on the branch somewhere else but not the specigied one
+git branch -m 
+  rename the branch you specify
+  you have to be on the branch
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
