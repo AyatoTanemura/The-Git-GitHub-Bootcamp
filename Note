@@ -127,11 +127,18 @@ git branch -m branch-name
 # Git Merging
 We merge branches, not specific commits
 We always merge to the current HEAD branch
+
 ## Fast Forward merge
 git merge branch-name
 1. Switch to or checkout the branch you want to merge the changes into (the receiving branch)
 2. Use the git merge command to merge changes from a specific branch into the current branch.
 
+## Resplving Conflicts
+  1. Open up the file(s) with merge conflicts
+  2. Edit the file(s) to remove the conflicts. Decide which branch's content you want to keep in each conflict. 
+     Or keep the content from both.
+  3. Remove the conflict "markers" in the document
+  4. Add your changes and then make a commit!
 
 
 
