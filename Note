@@ -120,13 +120,17 @@ git checkout branch-name
 git branch -d branch-name
   deleting the branch you specify
   you have to be on the branch somewhere else but not the specigied one
-git branch -m 
+git branch -m branch-name
   rename the branch you specify
   you have to be on the branch
 
-
-
-
+# Git Merging
+We merge branches, not specific commits
+We always merge to the current HEAD branch
+## Fast Forward merge
+git merge branch-name
+1. Switch to or checkout the branch you want to merge the changes into (the receiving branch)
+2. Use the git merge command to merge changes from a specific branch into the current branch.
 
 
 
