@@ -140,8 +140,10 @@ git merge branch-name
   3. Remove the conflict "markers" in the document
   4. Add your changes and then make a commit!
 
+# Comparing Changes
 
-
+git diff
+  lists all the changes in our working directory that are NOT staged for the next commit.
 
 
 
