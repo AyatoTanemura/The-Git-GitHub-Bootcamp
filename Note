@@ -176,6 +176,7 @@ git stash clear
     To clear out all stashes, run git stash clear
 
 # Undoing Changes & Time Traveling
+  *commit-hash can be replaced with HEAD~# (refers #th commit before)
 git checkout commit-hash
     You have a couple options:
     1. Stay in detached HEAD to examine the contents of the old commit. Poke around, view the files, etc.
@@ -186,7 +187,7 @@ git checkout HEAD~#
     HEAD~1 refers to the commit before HEAD (parent)
     HEAD~2 refers to 2 commits before HEAD (grandparent)
     This is not essential, but I wanted to mention it because it's quite weird looking if you've never seen it.
-gt checkout HEAD file-name
+git checkout HEAD file-name
 git checkout -- file-name file-name 
     to discard any changes in that file, reverting back to the HEAD.
 git restore file-name
@@ -202,7 +203,9 @@ git reset commit-hash
     but changes in files are not gone 
 git reset --hard commit-hash
     If you want to undo both the commits AND the actual changes in your files, you can use the --hard option.
-*commit-hash can be replaced with HEAD~# (refers #th commit before)
+git revert commit-hash
+    git reset actually moves the branch pointer backwards, eliminating commits.
+
 
 
 
