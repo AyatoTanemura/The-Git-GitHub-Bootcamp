@@ -175,6 +175,42 @@ git stash drop stash@{}
 git stash clear
     To clear out all stashes, run git stash clear
 
+# Undoing Changes & Time Traveling
+git checkout commit-hash
+    You have a couple options:
+    1. Stay in detached HEAD to examine the contents of the old commit. Poke around, view the files, etc.
+    2. Leave and go back to wherever you were before - reattach the HEAD
+    3. Create a new branch and switch to it. You can now make and save changes, since HEAD is no longer detached.
+git checkout HEAD~#
+    # IS NUMBER
+    HEAD~1 refers to the commit before HEAD (parent)
+    HEAD~2 refers to 2 commits before HEAD (grandparent)
+    This is not essential, but I wanted to mention it because it's quite weird looking if you've never seen it.
+gt checkout HEAD file-name
+git checkout -- file-name file-name 
+    to discard any changes in that file, reverting back to the HEAD.
+git restore file-name
+    To restore the file to the contents in the HEAD (same as "checkout HEAD")
+git restore --source HEAD~# file-name
+    restore the contents of home.html to its state from the commit prior to HEAD. You can also use a
+    particular commit hash as the source.
+git restore --staged file-name
+    If you have accidentally added a file to your staging area with git add and you don't wish to
+    include it in the next commit, you can use git restore to remove it from staging.
+git reset commit-hash
+    reset the repo back to a specific commit. The commits are gone. 
+    but changes in files are not gone 
+git reset --hard commit-hash
+    If you want to undo both the commits AND the actual changes in your files, you can use the --hard option.
+*commit-hash can be replaced with HEAD~# (refers #th commit before)
+
+
+
+
+
+
+
+
 
 
 
