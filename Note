@@ -206,9 +206,10 @@ git reset --hard commit-hash
 git revert commit-hash
     git reset actually moves the branch pointer backwards, eliminating commits.
 
-
-
-
+# Cloning
+git clone url
+    Git will retrieve all the files associated with the repository and will copy them to your local machine.
+    Make sure you are not inside of a repo when you clone!
 
 
 
