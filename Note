@@ -211,10 +211,19 @@ git clone url
     Git will retrieve all the files associated with the repository and will copy them to your local machine.
     Make sure you are not inside of a repo when you clone!
 
-
-
-
-
+# Remmote
+git remote -v
+    To view any existing remotes for you repository
+    This just displays a list of remotes. If you haven't added any remotes yet, you won't see anything!
+git remote add name url
+    A remote is really two things: a URL and a label.
+    To add a new remote, we need to provide both to Git.
+git remote rename old-name new-name
+git remote remove name
+    They are not commonly used, but there are commands to rename and delete remotes if needed.
+git push remote branch
+    We need to specify the remote we want to push up to AND the specific local branch we want to
+    push up to that remote.
 
 
 
