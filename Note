@@ -230,7 +230,7 @@ git push -u <remote> <branch>
     allwos us to set the upstream of the branch we are pushing. 
     You can think of this as a link connecting our local branch to a branch on Github.
     
-# Fetching & Pulling
+# Fetching 
 git branch -r 
     to view the remote branches our local repository knows about.
 git switc <remote-branch>
@@ -241,10 +241,16 @@ git fetch <remote>
 git fetch <remote> <branch>
     fetch a specific branch from a remote
 
-
-
-
-
+# Pulling
+--git pull = git fitch + git merge
+git pull <remote> <branch>   
+    To pull, we specify the particular remote and branch we want to pull using git pull <remote> <branch>. 
+    Just like with git merge, it matters WHERE we run this command from.
+    Whatever branch we run it from is where the changes will be merged into.
+git pull
+    If we run git pull without specifying a particular remote or branch to pull from, git assumes the following:
+    - remote will default to origin
+    - branch will default to whatever tracking connection is configured for your current branch.
 
 
 
