@@ -255,6 +255,44 @@ git pull
 # ReadMe
 markdown https://markdown-it.github.io/
 
+# Rebasing
+There are two main ways to use the git rebase command:
+    - as an alternative to merging
+    - as a cleanup tool
+git rebase master
+    Instead of using a merge commit, rebasing rewrites history bby creating new commits for each of the original feature branch commits.
+Never rebase commits that you have been shared with others If you have alrealdy pushed commmits up to Github... 
+DO not rebase them unless you are positive o one onn the ream is using those commits
+
+git rebase -i HEAD~<No.>
+    runnning git rebase with the -i option will enter the ubnteractive mode, with which allows us to edit commits, add files, drop commits, etc. 
+    Note that we need to specify how far back we want to rewrite commits.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
