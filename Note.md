@@ -268,31 +268,38 @@ git rebase -i HEAD~<No.>
     runnning git rebase with the -i option will enter the ubnteractive mode, with which allows us to edit commits, add files, drop commits, etc. 
     Note that we need to specify how far back we want to rewrite commits.
 
+# Tagging
+Lightweight tags: They are just a name/lable that points to a particular commit.
+Annotated tags: store extra meta data including the another's name and email, the date and a tagging message.
 
+Sementig versioning
+  <Major>.<Minor>.<Patch>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+git tag
+    print a list of all the tas in the current repo
+git tag -l "*<filter>*"
+    print  a list with filter
+git checkout <tag>
+    detach head at the tag point
+git tag <new tag name>
+    to create a lighweight tag
+    By default, Git will create the tag referring to the commit that HEAD is referencing.
+git tag -a <new tag name>
+    to create a new annotated tag. Git will tehn ope your default text editor and prompt you for additional information.
+    Similar to git commit, we can also use the -m option to pass a message directly and forgo the opening of the text editor.
+git show <tag>
+    to show the annotate of the tag
+git tag <new tag name> <commit hash>
+    to tag on precious commit
+git tag -f <new tag name>
+    Git will yell at us if we try to reuse a tag that is already referring to a commit.
+     I fwe use the -f option, we can force our tag through. 
+git tag -d <tag>
+    to delete a tag
+git push --tags
+    By default, the git push command does not trasfer tags to remote servers. 
+    If you have a lot  of tags that you want to push up at once, you can yse the --tags option to the git push command.
+    This will transfer all ofyou tags to the remote server that are not already there.
 
 
 
