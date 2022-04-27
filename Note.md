@@ -1,54 +1,78 @@
 # What is Git?
 The world's most popular version control system
+
 Version control is software that tracks and manages changes to files over time.
+
 Version control systems generally allow users to revisit earlier versions of the files, compare 
   changes between versions, undo changes, and a whole lot more.
 
 # Git vs GitHub
 ## Git
 Git is the version control software that runs locally on your machine. You don't need to register for an account.
+
 You don't need the internet to use it. You can use Git without ever touching Github.
 
 ## GitHub
 Github is a service that hosts Git repositories in the cloud and makes it easier to collaborate with other people.
+
 You do need to sign up for an account to use Github. It's an online place to share work that is done using Git.
 
 
 # setup
 ## Name
-git config --global user.name "name"
+`git config --global user.name "name"`
 ## Email
-git config --global user.email "email"
+`git config --global user.email "email"`
 ## Default Editor (VScode)
-git config --global core.editor "code --wait"
+`git config --global core.editor "code --wait"`
 
 # Terminal Command
 ## Navigation
-ls
-  print home directories (shows the files)
+`ls`
+
++ print home directories (shows the files)
 start .
-  show folders
-ls folderName/
-  print folders inside the location
-pwd
-  print ot your current location
-cd folderName
-  change location to the folder
-cd ..
-  take us back one level
-touch fileName
-  create file
-mkdir
-  make folder
-rm fileName
-  remove the file
-rm -rf folderName
-  remove the folder
-  '-rf' is a version of 'rm' that delete folders
+
++ show folders
+
+`ls folderName/`
+
++ print folders inside the location
+
+`pwd`
+
++ print ot your current location
+
+`cd folderName`
+
++ change location to the folder
+
+`cd ..`
+
++ take us back one level
+
+`touch fileName`
+
++ create file
+
+`mkdir`
+
++ make folder
+
+`rm fileName`
+
++ remove the file
+
+`rm -rf folderName`
+
++ remove the folder
++ '-rf' is a version of 'rm' that delete folders
 
 # Repositpry
 A Git "Repo" is a workspace which tracks and manages files within a folder.
+
 Anytime we want to use Git with a project, app, etc we need to create a new git repository. 
+
 We can have as many repos on our machine as needed, all with separate histories and contents.
 
 # Git command
@@ -56,51 +80,77 @@ We can have as many repos on our machine as needed, all with separate histories 
 https://git-scm.com/docs
 
 ## Basics
-git status
-    gives information on the current status of a git repository and its contents
-git init
-    Use git init to create a new git repository. 
-    Before we can do anything git-related, wemust initialize a repo first!
+`git status`
+
++ gives information on the current status of a git repository and its contents
+
+`git init`
+
++ Use git init to create a new git repository. 
+
++ Before we can do anything git-related, wemust initialize a repo first!
 
 ## Adding
-git add file1 file2
-    stage all changes at once
-git add .
-    this stages all changes at once
+`git add file1 file2`
+
++ stage all changes at once
+
+`git add .`
+
++ this stages all changes at once
+
 ## Committing
-git commit -m "Type Messege"
-    We use the git commit command to actually commit changes from the staging area.
-git commit
-    go VScode after commit and add comments
-git commit -a -m "message"
-    this does add and commit at the same time
+
+`git commit -m "Type Messege"`
+
++ We use the git commit command to actually commit changes from the staging area.
+
+`git commit`
+
++ go VScode after commit and add comments
+
+`git commit -a -m "message"`
+
++ this does add and commit at the same time
 
 ##Log
-git log
-    shows the log of commit
-git log --oneline
-    only shows the first line of comments
+`git log`
+
++ shows the log of commit
+
+`git log --oneline`
+
++ only shows the first line of comments
+
 # Commit in detail
-##Git docs
+
+## Git docs
+
 https://git-scm.com/docs (same as above)
 
-##Atomic Commits
+## Atomic Commits
+
 try to keep each commit focused on a single thing.
 
 ## writing comment
+
 either past tense or present, be in a pattern
 
 # Amending Commits
-git commit -m "some commit"
-git add forgotten_file
-git commit --amend
-    Suppose you just made a commit and then realized you forgot to include a file! Or, maybe you made a
-    typo in the commit message that you want to correct.
+
+`git commit -m "some commit"`
+
+`git add forgotten_file`
+
+`git commit --amend`
+
++ Suppose you just made a commit and then realized you forgot to include a file! Or, maybe you made a typo in the commit message that you want to correct.
 
 # Ignoring File
-touch .gitignore
-    Create a file called .gitignore in the root of a repository. Inside the file, we can write patterns to
-    tell Git which files & folders to ignore
+
+`touch .gitignore`
+
++ Create a file called .gitignore in the root of a repository. Inside the file, we can write patterns to tell Git which files & folders to ignore
 
 # Git Branching 
 git branch
