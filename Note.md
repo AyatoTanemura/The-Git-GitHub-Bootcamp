@@ -113,7 +113,7 @@ https://git-scm.com/docs
 
 + this does add and commit at the same time
 
-##Log
+## Log
 `git log`
 
 + shows the log of commit
@@ -153,203 +153,372 @@ either past tense or present, be in a pattern
 + Create a file called .gitignore in the root of a repository. Inside the file, we can write patterns to tell Git which files & folders to ignore
 
 # Git Branching 
-git branch
-    viewing branches
-git branch new-branch-name
-    Creating branches
-    Use git branch <branch-name> to make a new branch based upon the current HEAD
-git switch branch-name
-    Switching Branches
-git switch -c new-branch-name
-    Use git switch with the -c flag to create a new branch AND switch to it all in one go. 
-git checkout branch-name
-    The checkout command does a million additional things, so the decision was made to add a 
-    standalone switch command which is much simpler.
-  
+
+`git branch`
+
++ viewing branches
+
+`git branch new-branch-name`
+
++ Creating branches
+
++ Use git branch <branch-name> to make a new branch based upon the current HEAD
+
+`git switch branch-name`
+
++ Switching Branches
+
+`git switch -c new-branch-name`
+
++ Use git switch with the -c flag to create a new branch AND switch to it all in one go. 
+
+`git checkout branch-name`
+
++ The checkout command does a million additional things, so the decision was made to add a standalone switch command which is much simpler.
+
 # Deleting & Remaing branches
-git branch -d branch-name
-    deleting the branch you specify
-    you have to be on the branch somewhere else but not the specigied one
-git branch -m branch-name
-    rename the branch you specify
-    you have to be on the branch
+
+`git branch -d branch-name`
+
++ deleting the branch you specify
+
++ you have to be on the branch somewhere else but not the specigied one
+
+`git branch -m branch-name`
+
++ rename the branch you specify
+
++ you have to be on the branch
 
 # Git Merging
+
+
 We merge branches, not specific commits
+
 We always merge to the current HEAD branch
 
 ## Fast Forward merge
-git merge branch-name
-    1. Switch to or checkout the branch you want to merge the changes into (the receiving branch)
-    2. Use the git merge command to merge changes from a specific branch into the current branch.
+
+`git merge branch-name`
+    
+1. Switch to or checkout the branch you want to merge the changes into (the receiving branch)
+   
+2. Use the git merge command to merge changes from a specific branch into the current branch.
   
 ## Resplving Conflicts
-  1. Open up the file(s) with merge conflicts
-  2. Edit the file(s) to remove the conflicts. Decide which branch's content you want to keep in each conflict. 
-     Or keep the content from both.
-  3. Remove the conflict "markers" in the document
-  4. Add your changes and then make a commit!
+ 
+1. Open up the file(s) with merge conflicts
+
+2. Edit the file(s) to remove the conflicts. Decide which branch's content you want to keep in each conflict. Or keep the content from both.
+
+3. Remove the conflict "markers" in the document
+
+4. Add your changes and then make a commit!
 
 # Comparing Changes
 
-git diff
-    lists all the changes in our working directory that are NOT staged for the next commit.
-git diff HEAD
-    lists all changes in the working tree since your last commit.
-git diff --staged
-git diff --cached
-    list the changes between the staging area and our last commit.
-git diff HEAD file-name
-git diff --staged file-name
-    We can view the changes within a specific file by providing git diff with a filename.
-git diff branch1..branch2
-    list the changes between the tips of branch1 and branch2
-git diff commit1..commit2
-    To compare two commits, provide git diff with the commit hashes of the commits in question.
-  
+`git diff`
+
++ lists all the changes in our working directory that are NOT staged for the next commit.
+
+`git diff HEAD`
+
++ lists all changes in the working tree since your last commit.
+
+`git diff --staged`
+
+`git diff --cached`
+
++ list the changes between the staging area and our last commit.
+
+`git diff HEAD file-name`
+
+`git diff --staged file-name`
+
++ We can view the changes within a specific file by providing git diff with a filename.
+
+`git diff branch1..branch2`
+
++ list the changes between the tips of branch1 and branch2
+
+`git diff commit1..commit2`
+
++ To compare two commits, provide git diff with the commit hashes of the commits in question.
+
+
 # Stashing
-git stash
-    useful command that helps you save changes that you are not yet ready to commit.
-git stash pop
-    remove the most recently stashed changes in your stash and re-apply them to your working copy.
-git stash apply
-    to apply whatever is stashed away, without removing it from the stash. 
-    This can be useful if you want to apply stashed changes to multiple branches
-git stash list
-    run git stash list to view all stashes
-git stash apply stash@{}
-    git assumes you want to apply the most recent stash when you run git stash apply, but you can also specify
-    a particular stash like git stash apply stash@{2}
-git stash drop stash@{}
-    To delete a particular stash, you can use git stash drop <stash-id>
-git stash clear
-    To clear out all stashes, run git stash clear
+
+`git stash`
+
++ useful command that helps you save changes that you are not yet ready to commit.
+
+`git stash pop`
+
++ remove the most recently stashed changes in your stash and re-apply them to your working copy.
+
+`git stash apply`
+
++ to apply whatever is stashed away, without removing it from the stash. 
+
++ This can be useful if you want to apply stashed changes to multiple branches
+
+`git stash list`
+
++ run git stash list to view all stashes
+
+`git stash apply stash@{}`
+
++ git assumes you want to apply the most recent stash when you run git stash apply, but you can also specify a particular stash like git stash apply stash@{2}
+
+`git stash drop stash@{}`
+
++ To delete a particular stash, you can use git stash drop <stash-id>
+
+`git stash clear`
+
++ To clear out all stashes, run git stash clear
+
+
 
 # Undoing Changes & Time Traveling
-  *commit-hash can be replaced with HEAD~# (refers #th commit before)
-git checkout commit-hash
-    You have a couple options:
-    1. Stay in detached HEAD to examine the contents of the old commit. Poke around, view the files, etc.
-    2. Leave and go back to wherever you were before - reattach the HEAD
-    3. Create a new branch and switch to it. You can now make and save changes, since HEAD is no longer detached.
-git checkout HEAD~#
-    # IS NUMBER
-    HEAD~1 refers to the commit before HEAD (parent)
-    HEAD~2 refers to 2 commits before HEAD (grandparent)
-    This is not essential, but I wanted to mention it because it's quite weird looking if you've never seen it.
-git checkout HEAD file-name
-git checkout -- file-name file-name 
-    to discard any changes in that file, reverting back to the HEAD.
-git restore file-name
-    To restore the file to the contents in the HEAD (same as "checkout HEAD")
-git restore --source HEAD~# file-name
-    restore the contents of home.html to its state from the commit prior to HEAD. You can also use a
-    particular commit hash as the source.
-git restore --staged file-name
-    If you have accidentally added a file to your staging area with git add and you don't wish to
-    include it in the next commit, you can use git restore to remove it from staging.
-git reset commit-hash
-    reset the repo back to a specific commit. The commits are gone. 
-    but changes in files are not gone 
-git reset --hard commit-hash
-    If you want to undo both the commits AND the actual changes in your files, you can use the --hard option.
-git revert commit-hash
-    git reset actually moves the branch pointer backwards, eliminating commits.
+
+<commit-hash can be replaced by HEAD~# (refers #th commit before)>
+
+`git checkout commit-hash`
+
+You have a couple options:
+
+1. Stay in detached HEAD to examine the contents of the old commit. Poke around, view the files, etc.
+
+2. Leave and go back to wherever you were before - reattach the HEAD
+
+3. Create a new branch and switch to it. You can now make and save changes, since HEAD is no longer detached.
+
+`git checkout HEAD~#`
+
++ `#` IS NUMBER
+
++ HEAD~1 refers to the commit before HEAD (parent)
+
++ HEAD~2 refers to 2 commits before HEAD (grandparent)
+
++ This is not essential, but I wanted to mention it because it's quite weird looking if you've never seen it.
+
+`git checkout HEAD file-name`
+
+`git checkout -- file-name file-name `
+
++ to discard any changes in that file, reverting back to the HEAD.
+
+`git restore file-name`
+
++ To restore the file to the contents in the HEAD (same as "checkout HEAD")
+
+`git restore --source HEAD~# file-name`
+
++ restore the contents of home.html to its state from the commit prior to HEAD. You can also use a
+particular commit hash as the source.
+
+`git restore --staged file-name`
+
++ If you have accidentally added a file to your staging area with git add and you don't wish to
+include it in the next commit, you can use git restore to remove it from staging.
+
+`git reset commit-hash`
+
++ reset the repo back to a specific commit. The commits are gone. 
+
++ but changes in files are not gone 
+
+`git reset --hard commit-hash`
+  
++ If you want to undo both the commits AND the actual changes in your files, you can use the --hard option.
+
+`git revert commit-hash`
+
++ git reset actually moves the branch pointer backwards, eliminating commits.
+
+
 
 # Cloning
-git clone url
-    Git will retrieve all the files associated with the repository and will copy them to your local machine.
-    Make sure you are not inside of a repo when you clone!
+
+`git clone url`
+
++ Git will retrieve all the files associated with the repository and will copy them to your local machine.
+
++ Make sure you are not inside of a repo when you clone!
+
+
 
 # Remmote
-git remote -v
-    To view any existing remotes for you repository
-    This just displays a list of remotes. If you haven't added any remotes yet, you won't see anything!
-git remote add <name> <url>
-    A remote is really two things: a URL and a label.
-    To add a new remote, we need to provide both to Git.
-git remote rename old-name new-name
-git remote remove <name>
-    They are not commonly used, but there are commands to rename and delete remotes if needed.
-git push <remote> <branch>
-    We need to specify the remote we want to push up to AND the specific local branch we want to
-    push up to that remote.
-git push <remote> <local-branch>:<remote-branch>
-    to push our local ranch up to a remote branch of the same name, we dont have to!
-git push -u <remote> <branch>
-    allwos us to set the upstream of the branch we are pushing. 
-    You can think of this as a link connecting our local branch to a branch on Github.
-    
+
+`git remote -v`
+
++ To view any existing remotes for you repository
+
++ This just displays a list of remotes. If you haven't added any remotes yet, you won't see anything!
+
+`git remote add <name> <url>`
+
++ A remote is really two things: a URL and a label.
+
++ To add a new remote, we need to provide both to Git.
+
+`git remote rename old-name new-name`
+
+`git remote remove <name>`
+
++ They are not commonly used, but there are commands to rename and delete remotes if needed.
+
+`git push <remote> <branch>`
+
++ We need to specify the remote we want to push up to AND the specific local branch we want to
+push up to that remote.
+
+`git push <remote> <local-branch>:<remote-branch>`
+
++ to push our local ranch up to a remote branch of the same name, we dont have to!
+
+`git push -u <remote> <branch>`
+
++ allwos us to set the upstream of the branch we are pushing. 
+
++ You can think of this as a link connecting our local branch to a branch on Github.
+
+
+
 # Fetching 
-git branch -r 
-    to view the remote branches our local repository knows about.
-git switc <remote-branch>
-    to create a new local branch from the remote branch of the same name.
-git fetch <remote>
-   The git fetch <remote> command fetches branches and history from a specific remote repository. 
-   It only updates remote tracking branches. 
-git fetch <remote> <branch>
-    fetch a specific branch from a remote
+
+`git branch -r `
+
++ to view the remote branches our local repository knows about.
+
+`git switc <remote-branch>`
+
++ to create a new local branch from the remote branch of the same name.
+
+`git fetch <remote>`
+
++ The git fetch <remote> command fetches branches and history from a specific remote repository. 
+
++ It only updates remote tracking branches. 
+
+`git fetch <remote> <branch>`
+
++ fetch a specific branch from a remote
+
+
 
 # Pulling
---git pull = git fitch + git merge
-git pull <remote> <branch>   
-    To pull, we specify the particular remote and branch we want to pull using git pull <remote> <branch>. 
-    Just like with git merge, it matters WHERE we run this command from.
-    Whatever branch we run it from is where the changes will be merged into.
-git pull
-    If we run git pull without specifying a particular remote or branch to pull from, git assumes the following:
-    - remote will default to origin
-    - branch will default to whatever tracking connection is configured for your current branch.
+
+git pull = git fitch + git merge
+
+`git pull <remote> <branch> `  
+
++ To pull, we specify the particular remote and branch we want to pull using git pull <remote> <branch>. 
+
++ Just like with git merge, it matters WHERE we run this command from.
+
++ Whatever branch we run it from is where the changes will be merged into.
+
+`git pull`
+
++ If we run git pull without specifying a particular remote or branch to pull from, git assumes the following:
+
+  -  remote will default to origin
+
+  - branch will default to whatever tracking connection is configured for your current branch.
+
+
 
 # ReadMe
+
 markdown https://markdown-it.github.io/
 
-# Rebasing
-There are two main ways to use the git rebase command:
-    - as an alternative to merging
-    - as a cleanup tool
-git rebase master
-    Instead of using a merge commit, rebasing rewrites history bby creating new commits for each of the original feature branch commits.
-Never rebase commits that you have been shared with others If you have alrealdy pushed commmits up to Github... 
-DO not rebase them unless you are positive o one onn the ream is using those commits
 
-git rebase -i HEAD~<No.>
-    runnning git rebase with the -i option will enter the ubnteractive mode, with which allows us to edit commits, add files, drop commits, etc. 
-    Note that we need to specify how far back we want to rewrite commits.
+
+# Rebasing
+
+There are two main ways to use the git rebase command:
+
+- as an alternative to merging
+
+- as a cleanup tool
+
+`git rebase master`
+
++ Instead of using a merge commit, rebasing rewrites history bby creating new commits for each of the original feature branch commits.
+
++ Never rebase commits that you have been shared with others If you have alrealdy pushed commmits up to Github... 
+
++ DO not rebase them unless you are positive o one onn the ream is using those commits
+
+`git rebase -i HEAD~<No.>`
+
++ runnning git rebase with the -i option will enter the ubnteractive mode, with which allows us to edit commits, add files, drop commits, etc. 
+
++ Note that we need to specify how far back we want to rewrite commits.
 
 # Tagging
+
 Lightweight tags: They are just a name/lable that points to a particular commit.
+
 Annotated tags: store extra meta data including the another's name and email, the date and a tagging message.
 
 Sementig versioning
-  <Major>.<Minor>.<Patch>
 
-git tag
-    print a list of all the tas in the current repo
-git tag -l "*<filter>*"
-    print  a list with filter
-git checkout <tag>
-    detach head at the tag point
-git tag <new tag name>
-    to create a lighweight tag
-    By default, Git will create the tag referring to the commit that HEAD is referencing.
-git tag -a <new tag name>
-    to create a new annotated tag. Git will tehn ope your default text editor and prompt you for additional information.
-    Similar to git commit, we can also use the -m option to pass a message directly and forgo the opening of the text editor.
-git show <tag>
-    to show the annotate of the tag
-git tag <new tag name> <commit hash>
-    to tag on precious commit
-git tag -f <new tag name>
-    Git will yell at us if we try to reuse a tag that is already referring to a commit.
-     I fwe use the -f option, we can force our tag through. 
-git tag -d <tag>
-    to delete a tag
-git push --tags
-    By default, the git push command does not trasfer tags to remote servers. 
-    If you have a lot  of tags that you want to push up at once, you can yse the --tags option to the git push command.
-    This will transfer all ofyou tags to the remote server that are not already there.
+<Major>.<Minor>.<Patch>
+
+`git tag`
+
++ print a list of all the tas in the current repo
+
+`git tag -l "*<filter>*"`
+
++ print  a list with filter
+
+`git checkout <tag>`
+
++ detach head at the tag point
+
+`git tag <new tag name>`
+
++ to create a lighweight tag
+
++ By default, Git will create the tag referring to the commit that HEAD is referencing.
+
+`git tag -a <new tag name>`
+
++ to create a new annotated tag. Git will tehn ope your default text editor and prompt you for additional information.
+
++ Similar to git commit, we can also use the -m option to pass a message directly and forgo the opening of the text editor.
+
+`git show <tag>`
+
++ to show the annotate of the tag
+
+`git tag <new tag name> <commit hash>`
+
++ to tag on precious commit
+
+`git tag -f <new tag name>`
+
++ Git will yell at us if we try to reuse a tag that is already referring to a commit.
+
++ I fwe use the -f option, we can force our tag through. 
+
+`git tag -d <tag>`
+
++ to delete a tag
+
+`git push --tags`
+
++ By default, the git push command does not trasfer tags to remote servers. 
+
++ If you have a lot  of tags that you want to push up at once, you can yse the --tags option to the git push command.
+
++ This will transfer all ofyou tags to the remote server that are not already there.
+
 
 
 
