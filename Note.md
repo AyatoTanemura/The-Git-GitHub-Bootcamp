@@ -76,8 +76,7 @@ Anytime we want to use Git with a project, app, etc we need to create a new git 
 We can have as many repos on our machine as needed, all with separate histories and contents.
 
 # Git command
-## Official website about command
-https://git-scm.com/docs
+## [Official website about command](https://git-scm.com/docs)
 
 ## Basics
 `git status`
@@ -433,7 +432,7 @@ git pull = git fitch + git merge
 
 # ReadMe
 
-markdown https://markdown-it.github.io/
+[markdown](https://markdown-it.github.io/)
 
 
 
