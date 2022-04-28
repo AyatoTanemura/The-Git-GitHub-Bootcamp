@@ -518,13 +518,22 @@ Sementig versioning
 
 + This will transfer all ofyou tags to the remote server that are not already there.
 
+# Reflog 
 
+Git keeps a record of when the tips of branches and other referenes were updated in the repo
 
+<Limitations>
+  
+Git only keeps reflogs on your local activity. They are not shared with collaborators.
 
+Reflogs are expire. Git cleans out old entries after around 90 days, though this can be configured.
 
+`git reflog show HEAD`
 
++ The git reflog command accepts subcommands `show`, `expire`, `delete`, and `exists`. Show is the only commonly used variant, and it is the default subcommand.  
 
++ It will show the log of a specific reference (t defaults to HEAD)
 
-
+# Aliases
 
 
