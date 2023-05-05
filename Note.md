@@ -535,5 +535,15 @@ Reflogs are expire. Git cleans out old entries after around 90 days, though this
 + It will show the log of a specific reference (t defaults to HEAD)
 
 # Aliases
+1. Open your terminal application.
 
+2. Type nano ~/.bashrc to open your Bash configuration file in the nano editor.
+`alias myalias='mycommand --option'`
+  
+3. Replace myalias with the name you want to give to your alias, and replace mycommand --option with the command and its options that you want to replace.
 
+4. Save the changes and exit nano by pressing Ctrl+X, then Y, and finally Enter.
+
+5. Reload your Bash configuration by typing source ~/.bashrc in your terminal.
+
+6. Now, whenever you type myalias in your terminal, it will execute the command and options that you assigned to it.
